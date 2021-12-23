@@ -1,0 +1,67 @@
+@use "sass:math";
+body {
+    min-height:100vh;
+    width:100%;
+    font-size:$base-font-size;
+    line-height: 1.3;
+    font-family: $base-font-family;
+}
+
+@import 'base/headings';
+
+// add a class extend others that removes all spacing
+%remove-spacing {
+    padding: 0;
+    margin: 0;
+}
+/* Paragaph Styles */
+p {
+    //margin:$base-margin 0;
+    padding:$base-padding 0;
+}
+
+/* Unordered list styles */
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: $primary;
+}
+
+/* Horizontal Rule styles */
+hr {
+    border: 0;
+    border-top: 1px dotted #efefef;
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+}
+
+$text-actions: (
+    "upper": uppercase,
+    "lower": lowercase,
+    "cap": capitalize
+);
+@each $key, $value in $text-actions {
+    .text-#{$key} {
+        text-transform: $value;
+    }
+}
+.text-center {
+    text-align: center !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-justify {
+    text-align: justify !important;
+}

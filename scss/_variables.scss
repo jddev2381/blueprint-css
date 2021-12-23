@@ -1,0 +1,39 @@
+// Theme Colors
+$primary:       #1E3888;
+$secondary:     #C3F73A;
+$error:         #C71720;
+$info:          #0072E3;
+$warning:       #DE6421;
+$success:       #1A873C;
+$default:       #C4C9D9;
+$white:         #FFFFFF;
+$black:         #000000;
+// Color Palette
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "warning": $warning,
+    "success": $success,
+    "default": $default,
+    "white": $white,
+    "black": $black
+);
+// Spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+// Borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+// Fonts
+$base-font-family: 'Nunito Sans', sans-serif;
+$heading-font-family: 'Nunito Sans', sans-serif;
+$base-font-size: 1rem;
+$font-size-xs: $base-font-size * 0.65;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+// box-shadow
+$base-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);

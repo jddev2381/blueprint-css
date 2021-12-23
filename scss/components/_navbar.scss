@@ -1,0 +1,82 @@
+@use "sass:math";
+%flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing:border-box;
+}
+
+.navbar {
+    @extend %flex-layout;
+    padding: $base-padding $base-padding * 2;
+    box-shadow: $base-box-shadow;
+    background-color: map-get($colors, "default");
+
+    // Add class .sticky to make menu stick to top
+    &.sticky {
+        top: 0;
+        left: 0;
+        right: 0;
+        position: sticky;
+        z-index: 9999;
+    }
+
+    // a .lg class will double the padding
+    &.lg {
+        padding: $base-padding * 2 $base-padding * 4;
+    }
+    // an xl class adds even more padding
+    &.xl {
+        padding: $base-padding * 3 $base-padding * 6;
+    }
+
+    * {
+        // remove spacing (padding and margin)
+        // from all child elements
+        @extend %remove-spacing;
+    }
+    .site-title {
+        font-size: $font-size-lg;
+        .slogan {
+            // inside the title, you can add
+            // a slogan and the font is small
+            font-size: $font-size-sm;
+            font-weight: 100;
+        }
+    }
+    // Make the containing div flex
+    .container {
+        @extend %flex-layout;
+    }
+    ul {
+        //border: 2px solid yellow;
+        display: flex;
+        align-items: center;
+        li {
+            padding: 0;
+            margin: 0;
+            &:not(:first-child):not(:last-child) {
+                padding: 0 $base-padding;
+            }
+            a {
+                display:block;
+                //border:1px solid red;
+                padding: math.div($base-padding, 4) $base-padding;
+            }
+        }
+    }
+    // Let all of the links inherit whatever color is set
+    a {
+        color: inherit;
+    }
+}
+
+// Create a .navbar-primary as example, 
+// this happens for each of the colors
+@each $key, $val in $colors {
+    .navbar-#{$key} {
+        @extend .navbar;
+        background-color: $val;
+    }
+}

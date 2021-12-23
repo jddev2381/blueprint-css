@@ -1,0 +1,37 @@
+/*
+* 
+*/
+
+// import variables and functions
+@import 'functions';
+@import 'variables';
+
+// import breakpoints
+@import 'breakpoints';
+
+// import fonts
+@import 'fonts';
+
+// import the styling resets
+@import 'resets';
+
+// import the base styles and layout
+@import 'base';
+@import 'grid';
+// import the color classes
+@import 'colors';
+
+// import the components (buttons, cards, etc.)
+@import 'components/card';
+@import 'components/button';
+@import 'components/navbar';
+@import 'components/badge';
+@import 'components/forms';
+
+// import the utilities
+@import 'utilities';
+
+
+
+
+@import 'examples-stylings-page';

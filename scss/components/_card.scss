@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+%flat-view {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+    border-width: 0px;
+}
+
+.card {
+    display:block;
+    padding:$base-padding;
+    border:$base-border-thickness solid #ddd;
+    box-shadow:$base-box-shadow;
+    border-radius: math.div($base-border-radius, 4);
+
+    &.flat {
+        @extend %flat-view;
+    }
+    
+    .card-title {
+        font-size: $font-size-lg;
+        padding-bottom: $base-padding;
+        font-weight: bold;
+    }
+
+    .card-body {
+        font-size:$base-font-size;
+
+        a {
+            text-decoration:underline;
+        }
+    }
+}
